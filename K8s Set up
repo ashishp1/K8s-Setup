@@ -25,7 +25,7 @@ On both the master and worker nodes:
        systemctl enable kubelet && systemctl start kubelet
 
        Only on the Master Node:   
-       sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU
+       sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --control-plane-endpoint "3.94.193.38:6443" --ignore-preflight-errors=NumCPU
        mkdir -p $HOME/.kube
        sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
        sudo chown $(id -u):$(id -g) $HOME/.kube/config   
